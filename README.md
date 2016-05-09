@@ -10,10 +10,15 @@ This file must be placed into the main directory of your server
 
 !!The following file setup is required!!
 1. Line: `Messages:`
+
 2. Line: `PLACEHOLDER` <- Join-Message for normal players
+
 3. Line: `PLACEHOLDER` <- Join-Message for operators
+
 4. Line: `PLACEHOLDER` <- Leave-Message for normal players
+
 5. Line: `PLACEHOLDER` <- Leave-Message for operators
+
 
 # Message Setup
 `PLAYER` will be replaced with the name of the player
