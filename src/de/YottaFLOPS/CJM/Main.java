@@ -86,9 +86,7 @@ public class Main extends JavaPlugin {
             lines.set(lineNumber, newMessage);
             for(int i = 0; i < lines.size(); i++) {
                 allLines = allLines + lines.get(i)+ "\n";
-                System.out.println("LineNumber: " + String.valueOf(i) + "   Text: " + lines.get(i));
             }
-            System.out.println(allLines);
             data = allLines.getBytes(Charset.defaultCharset());
         } catch (IOException e) {
             e.printStackTrace();
@@ -102,8 +100,6 @@ public class Main extends JavaPlugin {
         try {
             if(data != null) {
                 Files.write(p, data, StandardOpenOption.WRITE);
-            } else {
-                exception.sendMessage("Seem like there isn't anything to write here!");
             }
         } catch (IOException e) {
             exception.sendMessage(ChatColor.RED + "There was an error writing to the file. Please make sure there is a cjmconfig.txt in the main server directory");
@@ -115,11 +111,6 @@ public class Main extends JavaPlugin {
         Path p = Paths.get(currentPath + "/cjmconfig.txt");
         try {
             List<String> lines = Files.readAllLines(p, Charset.defaultCharset());
-            System.out.println("CJM: Normal Players Join Message: \"" + lines.get(1) + "\"");
-            System.out.println("CJM: Operators Join Message: \"" + lines.get(2) + "\"");
-            System.out.println("CJM: Normal Players Leave Message: \"" + lines.get(3) + "\"");
-            System.out.println("CJM: Operators Leave Message: \"" + lines.get(4) + "\"");
-
             nmjoin = lines.get(1);
             opjoin = lines.get(2);
             nmleave = lines.get(3);
