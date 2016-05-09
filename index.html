@@ -2,132 +2,146 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Custom Join Messages by byYottaFLOPS</title>
+    <title>Custom Join Messages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="css/cayman.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      function animate_text()
+      {
+        var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ()[]{},;.:/?!§$%*+-";
+        var text = document.getElementById("random").innerHTML;
+        var new_text = "";
+        for (var i = 0; i < text.length; i++)
+        {
+          var new_char = text[i];
+          //find char pos
+          var pos = 0;
+          for (var i2 = 0; i2 < alphabet.length; i2++)
+          {
+            if (alphabet[i2] == new_char)
+            {
+              pos = (i2 + i + 1) % alphabet.length;
+              break;
+            }
+          }
+          new_text += alphabet[pos];
+        }
+        document.getElementById("random").innerHTML = new_text;
+      }
+
+      $(document).ready( function()
+      {
+        setInterval(animate_text, 40);
+      });
+    </script>
   </head>
   <body>
     <section class="page-header">
       <h1 class="project-name">Custom Join Messages</h1>
-      <h2 class="project-tagline">Change the standard Bukkit join message to a colourful, custom message and differentiate between normal players and operators</h2>
-      <a href="https://github.com/byYottaFLOPS/CustomJoinMessages" class="btn">View on GitHub</a>
-      <a href="https://github.com/byYottaFLOPS/CustomJoinMessages/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/byYottaFLOPS/CustomJoinMessages/tarball/master" class="btn">Download .tar.gz</a>
+      <h2 class="project-tagline">Change the standard Bukkit join and leave messages to a colourful, custom message and differentiate between normal players and operators</h2>
+      <a href="https://github.com/byYottaFLOPS/CustomJoinMessages/" class="btn">View on GitHub</a>
+      <a href="https://github.com/byYottaFLOPS/CustomJoinMessages/releases/latest" class="btn">Download latest release</a>
+      <a href="https://github.com/byYottaFLOPS/CustomJoinMessages/zipball/master" class="btn">Download Source as .zip</a>
     </section>
 
     <section class="main-content">
-      <h1>
-<a id="custom-join-messages" class="anchor" href="#custom-join-messages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Join Messages</h1>
 
-<p>Change the standard Bukkit join and leave messages to a colourful, custom message and differentiate between normal players and operators</p>
+      <h1><a id="user-content-header-1" class="anchor" href="#header-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Join Messages</h1>
 
-<h1>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+      <p>Change the standard Bukkit join and leave messages to a colourful, custom message and differentiate between normal players and operators</p>
 
-<ol>
-<li>Copy the 'CustomJoinMessages.jar' into your server's plugin folder</li>
-<li>Create in the main folder of you server the 'cjmconfig.txt'</li>
-</ol>
+      <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+      <ol class="task-list">
+        <li>Copy the 'CustomJoinMessages.jar' into your server's plugin folder</li>
+        <li>Create in the main folder of you server the 'cjmconfig.txt'</li>
+      </ol>
 
-<h1>
-<a id="cjmconfigtxt-setup" class="anchor" href="#cjmconfigtxt-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cjmconfig.txt Setup</h1>
+      <h2><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>cjmconfig.txt Setup</h2>
+      <p>This file must be placed into the main directory of your server</p>
 
-<p>This file must be placed into the main directory of your server</p>
+      <p>!!The following file setup is required!!</p>
+      <ol class="task-list">
+        <li>Line: <code>Messages:</code></li>
+        <li>Line: <code>PLACEHOLDER</code> <- Join-Message for normal players</li>
+        <li>Line: <code>PLACEHOLDER</code> <- Join-Message for operators</li>
+        <li>Line: <code>PLACEHOLDER</code> <- Leave-Message for normal players</li>
+        <li>Line: <code>PLACEHOLDER</code> <- Leave-Message for operators</li>
+      </ol>
 
-<p>!!The following file setup is required!!</p>
+      <h2><a id="user-content-header-4" class="anchor" href="#header-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Message Setup</h2>
 
-<ol>
-<li>Line: <code>Messages:</code>
-</li>
-<li>Line: <code>PLACEHOLDER</code> &lt;- Join-Message for normal players</li>
-<li>Line: <code>PLACEHOLDER</code> &lt;- Join-Message for operators</li>
-<li>Line: <code>PLACEHOLDER</code> &lt;- Leave-Message for normal players</li>
-<li>Line: <code>PLACEHOLDER</code> &lt;- Leave-Message for operators</li>
-</ol>
+      <p><code>PLAYER</code> will be replaced with the name of the player</p>
 
-<h1>
-<a id="message-setup" class="anchor" href="#message-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Message Setup</h1>
+      <p><code>PLAYERCOUNT</code> will be replaced with the number of players</p>
 
-<p><code>PLAYER</code> will be replaced with the name of the player</p>
+      <p>These are optional. For a blank message leave the line blank</p>
 
-<p><code>PLAYERCOUNT</code> will be replaced with the number of players</p>
+      <h2><a id="user-content-header-5" class="anchor" href="#header-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Color Codes</h2>
 
-<p>These are optional. For a blank message leave the line blank</p>
+      <p><div style="background-color: aqua; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Aqua: §b</p>
+      <p><div style="background-color: blue; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Blue: §9</p>
+      <p><div style="background-color: gold; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Gold: §6</p>
+      <p><div style="background-color: greenyellow; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Green: §a</p>
+      <p><div style="background-color: yellow; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Yellow: §e</p>
+      <p><div style="background-color: red; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Red: §c</p>
+      <p><div style="background-color: mediumpurple; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Light Purple: §d
+      <p><div style="background-color: darkcyan; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Dark Aqua: §3</p>
+      <p><div style="background-color: darkblue; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Dark Blue: §1</p>
+      <p><div style="background-color: green; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Dark Green: §2</p>
+      <p><div style="background-color: darkred; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Dark Red: §4</p>
+      <p><div style="background-color: purple; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> Dark Purple: §5</p>
+      <p><div style="background-color: white; border: solid 1px; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div> White: §f</p>
+      <p><div style="background-color: gray; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div>Gray: §7</p>
+      <p><div style="background-color: darkgray; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div>Dark Gray: §8</p>
+      <p><div style="background-color: black; width: 60px; height: 30px; float: left; position: relative; left: 200px;"></div>Black: §0</p>
 
-<h1>
-<a id="color-codes" class="anchor" href="#color-codes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Color Codes</h1>
+      <h2><a id="user-content-header-6" class="anchor" href="#header-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Codes</h2>
 
-<p><code>Aqua:          §b</code>
-<code>Blue:          §9</code>
-<code>Gold:          §6</code>
-<code>Green:         §a</code>
-<code>Yellow:        §e</code>
-<code>Red:           §c</code>
-<code>Light Purple:  §d</code>
-<code>Dark Aqua:     §3</code>
-<code>Dark Blue:     §1</code>
-<code>Dark Green:    §2</code>
-<code>Dark Red:      §4</code>
-<code>Dark Purple:   §5</code>
-<code>White:         §f</code>
-<code>Gray:          §7</code>
-<code>Dark Gray:     §8</code>
-<code>Black:         §0</code></p>
+      <p><div style="background-color: white; border: solid 1px; width: 60px; height: 30px; float: left; position: relative; text-align: center; left: 400px;"><b>Text</b></div> Bold: §l</p>
+      <p><div style="background-color: white; border: solid 1px; width: 60px; height: 30px; float: left; position: relative; text-align: center; left: 400px;"><i>Text</i></div> Italic: §o</p>
+      <p><div style="background-color: white; border: solid 1px; width: 60px; height: 30px; float: left; position: relative; text-align: center; text-decoration: underline; left: 400px;">Text</div> Underline: §n</p>
+      <p><div style="background-color: white; border: solid 1px; width: 60px; height: 30px; float: left; position: relative; text-align: center; text-decoration: line-through; left: 400px;">Text</div> Strike: §m</p>
+      <p><div style="background-color: white; border: solid 1px; width: 60px; height: 30px; float: left; position: relative; text-align: center; left: 400px;">Text</div> Reset: §r</p>
+      <p><div id="random" style="background-color: white; border: solid 1px; width: 60px; height: 30px; float: left; position: relative; text-align: center; left: 400px;">Text</div> Random Chars that change: §k</p>
 
-<h1>
-<a id="other-codes" class="anchor" href="#other-codes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other Codes</h1>
+      <h2><a id="user-content-header-7" class="anchor" href="#header-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
 
-<p><code>Bold: §l</code>
-<code>Italic: §o</code>
-<code>Underline: §n</code>
-<code>Strike: §m</code>
-<code>Reset: §r</code>
-<code>Random Chars that change: §k</code></p>
+      <p>Minigame join message: <code>§2PLAYER §a joined the game [§8PLAYERCOUNT§a]</code></p>
 
-<h1>
-<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h1>
+      <p>Admin join message: <code>§4[OP] PLAYER joined the server</code></p>
 
-<p>Minigame join message: <code>§2PLAYER §a joined the game [§8PLAYERCOUNT§a]</code></p>
+      <h2><a id="user-content-header-8" class="anchor" href="#header-8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commands</h2>
+      <h4><a id="user-content-header-9" class="anchor" href="#header-9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Join-Messages:</h4>
 
-<p>Admin join message: <code>§4[OP] PLAYER joined the server</code></p>
+      <p><code>/setplayerjoin</code> Set the join message for <b>ALL</b> players</p>
 
-<h1>
-<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
+      <p><code>/setnormaljoin</code> Set the join message for <b>ALL NON-OP</b> players</p>
 
-<h3>
-<a id="join-messages" class="anchor" href="#join-messages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Join-Messages:</h3>
+      <p><code>/setopjoin</code> Set the join message for <b>ALL OP</b> players</p>
 
-<p><code>/setplayerjoin</code> Set the join message for <strong>ALL</strong> players</p>
+      <h4><a id="user-content-header-10" class="anchor" href="#header-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Leave-Messages:</h4>
 
-<p><code>/setnormaljoin</code> Set the join message for <strong>ALL NON-OP</strong>  players</p>
+      <p><code>/setplayerleave</code> Set the leave message for <b>ALL</b> players</p>
 
-<p><code>/setopjoin</code> Set the join message for <strong>ALL OP</strong> players</p>
+      <p><code>/setnormalleave</code> Set the leave message for <b>ALL NON-OP</b>  players</p>
 
-<h3>
-<a id="leave-messages" class="anchor" href="#leave-messages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Leave-Messages:</h3>
+      <p><code>/setopleave</code> Set the leave message for <b>ALL OP</b> players</p>
 
-<p><code>/setplayerleave</code> Set the leave message for <strong>ALL</strong> players</p>
+      <h4><a id="user-content-header-11" class="anchor" href="#header-11" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other:</h4>
 
-<p><code>/setnormalleave</code> Set the leave message for <strong>ALL NON-OP</strong>  players</p>
+      <p><code>/getjoinmessages</code> returns the current join and leave messages for every player group</p>
 
-<p><code>/setopleave</code> Set the leave message for <strong>ALL OP</strong> players</p>
-
-<h3>
-<a id="other" class="anchor" href="#other" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other:</h3>
-
-<p><code>/getjoinmessages</code> returns the current join and leave messages for all players</p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/byYottaFLOPS/CustomJoinMessages">Custom Join Messages</a> is maintained by <a href="https://github.com/byYottaFLOPS">byYottaFLOPS</a>.</span>
-
+        <span class="site-footer-owner"><a href="https://github.com/jasonlong/cayman-theme">Cayman</a> is maintained by <a href="https://github.com/jasonlong">jasonlong</a>.</span>
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
 
     </section>
 
-  
   </body>
 </html>
