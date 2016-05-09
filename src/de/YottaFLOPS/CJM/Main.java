@@ -78,14 +78,14 @@ public class Main extends JavaPlugin {
         byte[] data = null;
         String allLines = "";
         String newMessage = "";
-        for(int i = 0; i < s.length; i++) {
-            newMessage = newMessage + s[i] + " ";
+        for(String n : s) {
+            newMessage = newMessage + n + " ";
         }
         try {
             List<String> lines = Files.readAllLines(p, Charset.defaultCharset());
             lines.set(lineNumber, newMessage);
-            for(int i = 0; i < lines.size(); i++) {
-                allLines = allLines + lines.get(i)+ "\n";
+            for (String line : lines) {
+                allLines = allLines + line + "\n";
             }
             data = allLines.getBytes(Charset.defaultCharset());
         } catch (IOException e) {
