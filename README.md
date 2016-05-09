@@ -16,7 +16,6 @@ This file must be placed into the main directory of your server
 4. Line: `PLACEHOLDER` <- Leave-Message for normal players
 5. Line: `PLACEHOLDER` <- Leave-Message for operators
 
-
 # Message Setup
 `PLAYER` will be replaced with the name of the player
 
@@ -57,3 +56,24 @@ These are optional. For a blank message leave the line blank
 Minigame join message: `§2PLAYER §a joined the game [§8PLAYERCOUNT§a]`
 
 Admin join message: `§4[OP] PLAYER joined the server`
+
+# Commands
+Join-Messages:
+
+`/setplayerjoin` Set the join message for **ALL** players
+
+`/setnormaljoin` Set the join message for **ALL NON-OP**  players
+
+`/setopjoin` Set the join message for **ALL OP** players
+
+Leave-Messages:
+
+`/setplayerleave` Set the leave message for **ALL** players
+
+`/setnormalleave` Set the leave message for **ALL NON-OP**  players
+
+`/setopleave` Set the leave message for **ALL OP** players
+
+Other:
+
+`/getjoinmessages` returns the current join and leave messages for all players
