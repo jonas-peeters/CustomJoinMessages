@@ -58,7 +58,7 @@ Minigame join message: `§2PLAYER §a joined the game [§8PLAYERCOUNT§a]`
 Admin join message: `§4[OP] PLAYER joined the server`
 
 # Commands
-Join-Messages:
+###Join-Messages:
 
 `/setplayerjoin` Set the join message for **ALL** players
 
@@ -66,7 +66,7 @@ Join-Messages:
 
 `/setopjoin` Set the join message for **ALL OP** players
 
-Leave-Messages:
+###Leave-Messages:
 
 `/setplayerleave` Set the leave message for **ALL** players
 
@@ -74,6 +74,6 @@ Leave-Messages:
 
 `/setopleave` Set the leave message for **ALL OP** players
 
-Other:
+###Other:
 
 `/getjoinmessages` returns the current join and leave messages for all players
