@@ -1,0 +1,19 @@
+name: CustomJoinMessages
+version: 1.0.0
+author: YottaFLOPS
+main: de.YottaFLOPS.CJM.Main
+commands:
+  setplayerjoin:
+    description: Set the join-message for ALL players.
+  setopjoin:
+    description: Set the join-message for ALL OP players.
+  setnormaljoin:
+    description: Set the join-message for ALL NON-OP players.
+  setplayerleave:
+    description: Set the leave-message for ALL players.
+  setopleave:
+    description: Set the leave-message for ALL OP players.
+  setnormalleave:
+    description: Set the leave-message for ALL NON-OP players.
+  getjoinmessages:
+    description: Returns you the join-messages.
